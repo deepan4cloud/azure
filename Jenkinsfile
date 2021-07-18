@@ -31,12 +31,13 @@ pipeline {
 
         stage('terraform init') {
             steps {
+                sh 'cd azure'
                 sh 'sudo /usr/bin/terraform init'
             }
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./azure; sudo /home/ec2-user/terraform plan'
+                sh 'ls ./azure; sudo /usr/bin/terraform plan'
             }
         }
         stage('terraform ended') {
