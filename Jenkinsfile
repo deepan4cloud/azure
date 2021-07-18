@@ -1,4 +1,3 @@
-node {
 pipeline{
     agent any
 }
@@ -8,4 +7,3 @@ pipeline{
             git credentialsId: 'deepan4cloud-git-cred', url: 'https://github.com/deepan4cloud/azure.git'
 }
     }
-}
