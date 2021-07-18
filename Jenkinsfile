@@ -25,7 +25,7 @@ pipeline {
                 sh 'echo $AZURE_CLIENT_ID'
                 sh 'echo $AZURE_CLIENT_SECRET'
                 sh 'echo $AZURE_TENANT_ID'
-                sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+                sh 'az login --service-principal -u e8b7d642-91b1-4554-b0b6-bf878b5045a3 -p 2H.tTereYBSIn.vbNEViTOkQImY1x_Jx3o -t 1d790f78-cb86-4b48-89fc-3d03182efbe9'
             }
         }
 
