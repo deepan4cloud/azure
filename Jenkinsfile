@@ -31,11 +31,6 @@ pipeline {
             }
         }
         
-         stage('terraform apply') {
-            steps {
-                sh 'ls ./azure; sudo /usr/bin/terraform -chdir=azure/ apply -auto-approve'
-            }
-        }
         
         stage('terraform ended') {
             steps {
