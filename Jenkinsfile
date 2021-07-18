@@ -24,9 +24,10 @@ pipeline {
             }
         }
 
-        stage('terraform init') {
-            steps {
-                sh 'sudo /usr/bin/terraform init ./azure/main.tf'
+        stage('terraform init'){
+            steps{
+                sh 'pwd'
+                sh 'sudo /usr/bin/terraform init ./azure'
             }
         }
         stage('terraform plan') {
