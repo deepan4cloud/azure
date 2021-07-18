@@ -34,7 +34,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                sh 'ls ./azure; sudo /usr/bin/terraform plan'
+                sh 'ls ./azure; sudo /usr/bin/terraform -chdir=azure/ plan'
             }
         }
         stage('terraform ended') {
