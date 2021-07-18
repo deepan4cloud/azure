@@ -1,3 +1,3 @@
 #!/bin/sh
 pwd
-cd /azure
+sudo cd azure
