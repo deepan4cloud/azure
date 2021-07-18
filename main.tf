@@ -14,12 +14,3 @@ provider "azurerm" {
   client_secret   = "2H.tTereYBSIn.vbNEViTOkQImY1x_Jx3o"
   tenant_id       = "1d790f78-cb86-4b48-89fc-3d03182efbe9"
 }
-
-resource "azurerm_resource_group" "rg1" {
-    name = "terraform-rg"
-    location = "southeastasia"
-}
-
-output "resourcegroup" {
-    value = "${azurerm_resource_group.rg1.name}"
-}
