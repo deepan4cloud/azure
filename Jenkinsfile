@@ -29,7 +29,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls'
                 sh 'sleep 5'
-                sh 'cd azure'
+                dir ('azure')
                 sh 'pwd'
                 sh 'sudo /usr/bin/terraform init ./azure'
             }
