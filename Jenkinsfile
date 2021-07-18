@@ -29,7 +29,7 @@ pipeline {
             steps{
                 sh 'pwd'
                 sh 'ls'
-                sh 'ls -al; sudo /usr/bin/terraform init'
+                sh 'ls -al; sudo /usr/bin/terraform -chdir=azure/ init'
             }
         }
         stage('terraform plan') {
