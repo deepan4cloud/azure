@@ -22,7 +22,6 @@ pipeline {
         stage('Terraform Init'){
             
             steps {
-                    ansiColor('xterm') {
                     withCredentials([azureServicePrincipal(
                     credentialsId: 'Azure',
                     subscriptionIdVariable: 'ARM_SUBSCRIPTION_ID',
@@ -38,9 +37,7 @@ pipeline {
                         """
                            }
                     }
-             }
         }
-        
         
         stage('terraform init'){
             steps{
