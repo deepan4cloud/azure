@@ -29,7 +29,7 @@ pipeline {
             steps{
                 sh 'pwd'
                 sh 'ls'
-                sh 'chmod -R 755 *'
+                sh 'sudo chmod -R 755 *'
                 sh './azure/changedir.sh'
                 sh 'pwd'
                 sh 'ls -al; sudo /usr/bin/terraform init'
