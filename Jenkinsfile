@@ -26,7 +26,7 @@ pipeline {
 
         stage('terraform init') {
             steps {
-                sh 'cd /azure; sudo /usr/bin/terraform init'
+                sh 'sudo /usr/bin/terraform init ./azure/main.tf'
             }
         }
         stage('terraform plan') {
