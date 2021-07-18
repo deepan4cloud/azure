@@ -31,7 +31,7 @@ pipeline {
                 dir('azure'){
                 sh 'pwd'
                 }
-                sh 'sudo /usr/bin/terraform init ./azure'
+                sh 'sudo /usr/bin/terraform init'
             }
         }
         stage('terraform plan') {
