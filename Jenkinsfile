@@ -21,7 +21,7 @@ pipeline {
         stage('azure login'){
             steps{
                 sh 'sudo chmod -R 755 azure/*'
-                sh 'azure/set-env.sh'
+                sh './azure/set-env.sh'
                 sh 'echo $AZURE_CLIENT_ID'
                 sh 'echo $AZURE_CLIENT_SECRET'
                 sh 'echo $AZURE_TENANT_ID'
