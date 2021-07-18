@@ -19,26 +19,15 @@ pipeline {
             }
         }
 
-        stage('Terraform Init'){
-            
-            steps {
-                    withCredentials([azureServicePrincipal(
-                    credentialsId: 'Azure',
-                    subscriptionIdVariable: 'ARM_SUBSCRIPTION_ID',
-                    clientIdVariable: 'ARM_CLIENT_ID',
-                    clientSecretVariable: 'ARM_CLIENT_SECRET',
-                    tenantIdVariable: 'ARM_TENANT_ID'
-                ), string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')]) {
-                        
-                        sh """
-                                
-                        echo "Initialising Terraform"
-                        /usr/bin/terraform -chdir=azure/ init
-                        """
-                           }
-                    }
-        }
-        
+        stage('azure login'){
+            steps{
+            withCredentials([usernamePassword(credentialsId: 'Azure', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+       sh '''
+          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          az account set -s $AZURE_SUBSCRIPTION_ID
+        '''
+     }   
+                
         stage('terraform init'){
             steps{
                 sh 'pwd'
