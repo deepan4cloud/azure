@@ -15,7 +15,7 @@ pipeline {
         stage('git clone') {
             steps {
                 sh 'sudo rm -r *;sudo git clone https://github.com/deepan4cloud/azure.git'
-                sh 'ls'
+                sh 'pwd'
             }
         }
 
@@ -29,9 +29,6 @@ pipeline {
             steps{
                 sh 'pwd'
                 sh 'ls'
-                sh 'sudo chmod -R 755 *'
-                sh './azure/changedir.sh'
-                sh 'pwd'
                 sh 'ls -al; sudo /usr/bin/terraform init'
             }
         }
