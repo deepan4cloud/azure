@@ -30,6 +30,13 @@ pipeline {
                 sh 'ls ./azure; sudo /usr/bin/terraform -chdir=azure/ plan'
             }
         }
+        
+         stage('terraform apply') {
+            steps {
+                sh 'ls ./azure; sudo /usr/bin/terraform -chdir=azure/ apply -auto-approve'
+            }
+        }
+        
         stage('terraform ended') {
             steps {
                 sh 'echo "Ended....!!"'
