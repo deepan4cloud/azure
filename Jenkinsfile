@@ -29,7 +29,7 @@ pipeline {
             steps{
                 sh 'pwd'
                 sh 'ls'
-                sh 'cd /var/lib/jenkins/workspace/azure-iac_3/azure'
+                sh './azure/changedir.sh'
                 sh 'pwd'
                 sh 'ls -al; sudo /usr/bin/terraform init'
             }
